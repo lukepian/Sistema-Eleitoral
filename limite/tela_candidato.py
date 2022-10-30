@@ -34,15 +34,19 @@ class TelaCandidato:
                 print("CPF inválido, tente novamente")
 
     def pega_dados_candidato(self):
-        nome_candidato = input("Digite o nome:")
-        cpf_candidato = self.pega_cpf()
-        tipo_do_eleitor = input("Digite o tipo do eleitor:")
-        numero_candidato = self.pega_numero_candidato()
-        chapa_candidato = input("Digite a chapa do candidato:")
-        cargo_candidato = input("Digite o cargo do candidato:")
-        dados = {1: nome_candidato, 2: cpf_candidato, 3: tipo_do_eleitor, 4: numero_candidato,
-                 5: chapa_candidato, 6: cargo_candidato}
-        return dados
+        while True:
+            nome_candidato = input("Digite o nome:")
+            cpf_candidato = self.pega_cpf()
+            tipo_do_eleitor = input("Digite o tipo do eleitor:")
+            numero_candidato = self.pega_numero_candidato()
+            chapa_candidato = input("Digite a chapa do candidato:")
+            cargo_candidato = input("Digite o cargo do candidato:")
+            if len(nome_candidato) > 0:
+                dados = {1: nome_candidato, 2: cpf_candidato, 3: tipo_do_eleitor, 4: numero_candidato,
+                         5: chapa_candidato, 6: cargo_candidato}
+                return dados
+            else:
+                print("Nome inválido, tente novamente")
 
     def mostra_candidatos(self, dados_candidatos):
         if len(dados_candidatos) == 0:
