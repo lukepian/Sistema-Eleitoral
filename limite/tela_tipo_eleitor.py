@@ -18,12 +18,20 @@ class TelaTipoEleitor:
             raise ValueError
 
     def pega_nome_tipo_eleitor(self):
-        nome_tipo_eleitor = input("Digite o nome do Tipo de Eleitor:")
-        return nome_tipo_eleitor
+        while True:
+            nome_tipo_eleitor = input("Digite o nome do Tipo de Eleitor:")
+            if len(nome_tipo_eleitor) > 0:
+                return nome_tipo_eleitor
+            else:
+                print("Nome inválido, tente novamente")
 
     def altera_nome_tipo_eleitor(self):
-        nome_tipo_eleitor = input("Digite o novo nome do Tipo de Eleitor:")
-        return nome_tipo_eleitor
+        while True:
+            nome_tipo_eleitor = input("Digite o novo nome do Tipo de Eleitor:")
+            if len(nome_tipo_eleitor) > 0:
+                return nome_tipo_eleitor
+            else:
+                print("Nome inválido, tente novamente")
 
     def mostra_tipos_eleitor(self, tipos_eleitor):
         if len(tipos_eleitor) > 0:
