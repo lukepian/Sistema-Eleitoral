@@ -26,11 +26,15 @@ class TelaEleitor:
                 print("CPF inválido, tente novamente")
 
     def pega_dados_eleitor(self):
-        nome_eleitor = input("Digite o nome:")
-        cpf_eleitor = self.pega_cpf()
-        tipo_do_eleitor = input("Digite o tipo do eleitor:")
-        dados = {1: nome_eleitor, 2: cpf_eleitor, 3: tipo_do_eleitor}
-        return dados
+        while True:
+            nome_eleitor = input("Digite o nome:")
+            cpf_eleitor = self.pega_cpf()
+            tipo_do_eleitor = input("Digite o tipo do eleitor:")
+            if len(nome_eleitor) > 0:
+                dados = {1: nome_eleitor, 2: cpf_eleitor, 3: tipo_do_eleitor}
+                return dados
+            else:
+                print("Nome inválido, tente novamente")
 
     def mostra_eleitores(self, dados_eleitores):
         if len(dados_eleitores) == 0:
