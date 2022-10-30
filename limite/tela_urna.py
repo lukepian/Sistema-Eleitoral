@@ -61,8 +61,11 @@ class TelaUrna:
                 centro = input("Digite o centro da Urna:")
                 turno = input("Digite o turno da eleição:")
                 codigo = int(input("Digite o código da urna:"))
-                dados = {1: centro, 2: turno, 3: codigo}
-                return dados
+                if len(centro) > 0 and len(turno) > 0:
+                    dados = {1: centro, 2: turno, 3: codigo}
+                    return dados
+                else:
+                    print("Alguns dados inválidos, tente novamente")
             except ValueError:
                 print("Código inválido, tente novamente")
 
