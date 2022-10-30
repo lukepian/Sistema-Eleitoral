@@ -18,12 +18,20 @@ class TelaChapa:
             raise ValueError
 
     def pega_nome_chapa(self):
-        nome_chapa = input("Digite o nome da Chapa:")
-        return nome_chapa
+        while True:
+            nome_chapa = input("Digite o nome da Chapa:")
+            if len(nome_chapa) > 0:
+                return nome_chapa
+            else:
+                print("Nome inválido, tente novamente")
 
     def altera_nome_chapa(self):
-        nome_chapa = input("Digite o novo nome da Chapa:")
-        return nome_chapa
+        while True:
+            nome_chapa = input("Digite o novo nome da Chapa:")
+            if len(nome_chapa) > 0:
+                return nome_chapa
+            else:
+                print("Nome inválido, tente novamente")
 
     def mostra_chapas(self, chapas):
         if len(chapas) > 0:
