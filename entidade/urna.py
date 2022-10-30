@@ -86,9 +86,6 @@ class Urna:
     def add_eleitor_votante(self, eleitor):
         self.__eleitores_votantes.append(eleitor)
 
-    def encerrar_votacao(self):
-        self.__homologacao = False
-
     def resultado_por_cargo(self, cargo):
         lista_votos = []
         for voto in self.__votos:
