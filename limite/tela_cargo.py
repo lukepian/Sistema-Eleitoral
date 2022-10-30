@@ -1,21 +1,12 @@
+from limite.tela import Tela
 
 
-class TelaCargo:
+class TelaCargo(Tela):
 
     def mensagem(self, tipo_mensagem: int):
         opcoes = {1: "Cadastro realizado com sucesso!", 2: "Cadastro excluído com sucesso!",
                   3: "Cadastro alterado com sucesso!"}
         print(opcoes[tipo_mensagem])
-
-    def mostra_erro(self, erro):
-        print(erro)
-
-    def pega_numero(self, lim_inf, lim_sup):
-        num = int(input("Digite uma das opções:"))
-        if lim_inf <= num <= lim_sup:
-            return num
-        else:
-            raise ValueError
 
     def pega_nome_cargo(self):
         while True:
