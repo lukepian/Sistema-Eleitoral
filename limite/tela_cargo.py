@@ -18,12 +18,20 @@ class TelaCargo:
             raise ValueError
 
     def pega_nome_cargo(self):
-        nome_cargo = input("Digite o nome do Cargo:")
-        return nome_cargo
+        while True:
+            nome_cargo = input("Digite o nome do Cargo:")
+            if len(nome_cargo) > 0:
+                return nome_cargo
+            else:
+                print("Nome inválido, tente novamente")
 
     def altera_nome_cargo(self):
-        nome_cargo = input("Digite o novo nome do Cargo:")
-        return nome_cargo
+        while True:
+            nome_cargo = input("Digite o novo nome do Cargo:")
+            if len(nome_cargo) > 0:
+                return nome_cargo
+            else:
+                print("Nome inválido, tente novamente")
 
     def mostra_cargos(self, cargos):
         if len(cargos) > 0:
